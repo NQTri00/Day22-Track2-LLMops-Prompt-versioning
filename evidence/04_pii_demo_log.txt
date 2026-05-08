@@ -1,0 +1,22 @@
+
+--- Testing PII Detector ---
+Case 1: PASS
+  Input:  Hello, my name is John Doe and I have no PII.
+  Output: Hello, my name is John Doe and I have no PII.
+
+Case 2: PASS
+  Input:  My email is john.doe@example.com, please contact me.
+  Output: My email is [REDACTED], please contact me.
+
+Case 3: PASS
+  Input:  You can reach me at 555-123-4567 or 123-45-6789.
+  Output: You can reach me at [REDACTED] or [REDACTED].
+
+Case 4: PASS
+  Input:  My card number is 1234-5678-9012-3456.
+  Output: My card number is [REDACTED].
+
+Case 5: PASS
+  Input:  Mix: user@site.com and (555) 555-5555
+  Output: Mix: [REDACTED] and [REDACTED]
+

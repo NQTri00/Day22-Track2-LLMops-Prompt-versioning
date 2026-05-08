@@ -1,0 +1,22 @@
+
+--- Testing JSON Repair ---
+Case 1: PASS
+  Input:  {"status": "ok", "message": "Valid JSON"}
+  Output: {"status": "ok", "message": "Valid JSON"}
+
+Case 2: PASS
+  Input:  ```json
+{"status": "fenced", "count": 10}
+```
+  Output: ```json
+{"status": "fenced", "count": 10}
+```
+
+Case 3: PASS
+  Input:  {'status': 'single-quotes', 'key': 'value'}
+  Output: {'status': 'single-quotes', 'key': 'value'}
+
+Case 4: PASS
+  Input:  {"status": "broken", "unclosed": "brace"
+  Output: {"error": "Failed to parse JSON", "raw_output": "{\"status\": \"broken\", \"unclosed\": \"brace\""}
+
